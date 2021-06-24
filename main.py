@@ -1,3 +1,4 @@
+import sys
 
 def main():
   """
@@ -13,12 +14,22 @@ def main():
   cont2 = str(input())
   if cont2 == "Documents" or cont2 == "documents":
     print("All documents containing the Te Reo Maaori information correlating to the quiz levels:")
-    print("Document 1 - ") # Document title goes here
-    print("Document 2 - ") # Document title goes here
-    print("Document 3 - ") # Document title goes here
-    print("Document 4 - ") # Document title goes here
-    print("Document 5 - ") # Document title goes here
-    print("Document 6 - ") # Document title goes here
+    print("Document 1 - Maori Colours")
+    print("Document 2 - ")
+    print("Document 3 - ")
+    print("Document 4 - ")
+    print("Document 5 - ")
+    print("Document 6 - ")
+    print()
+    print("Which level do you wish to play?")
+    print(" - To play view the document of your choice, please type: [Number]...")
+
+    """
+    Phase 3 - v1.0
+    Authorised by Liam Pettigrew
+    18th June 2021
+    """
+
   elif cont2 == "Quiz" or cont2 == "quiz":
     print("All quiz levels:")
     print("Level 1 - ") # Level title goes here (the same as the document title)
@@ -34,6 +45,22 @@ def main():
     print()
     main()
 
+# Version 2 of instructions function - lets you continue after reading the instructions
+def ins():
+  print("Have you read all of the instructions?")
+  print(" - If so, please continue the program by typing: Yes")
+  print(" - If not, please break the program by typing: No")
+  instructionscontinue = input
+  if str(instructionscontinue()) == "yes" or str(instructionscontinue()) == "Yes":
+    print("The program will now continue.")
+    print()
+    main()
+    intro = True
+  elif str(instructionscontinue()) == "No" or str(instructionscontinue()) == "no":
+    sys.exit(print("The program will now self-destruct"))
+  else:
+    print("Sorry, " + str(instructionscontinue()) + " is not a valid answer.")
+  
 """
 Starting Welcome - v1.0
 Authorised by Liam Pettigrew
@@ -49,6 +76,9 @@ while not intro:
   cont = str(input())
   if cont == "Instructions" or cont == "instructions":
     print("...Instructions go here...")
+    print()
+    ins()
+    intro = True
   elif cont == "Continue" or cont == "continue":
     intro = True
     main()
