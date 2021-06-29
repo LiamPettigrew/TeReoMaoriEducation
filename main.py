@@ -14,21 +14,40 @@ def main():
   cont2 = str(input())
   if cont2 == "Documents" or cont2 == "documents":
     print("All documents containing the Te Reo Maaori information correlating to the quiz levels:")
-    print("Document 1 - Maori Colours")
-    print("Document 2 - ")
-    print("Document 3 - ")
-    print("Document 4 - ")
-    print("Document 5 - ")
-    print("Document 6 - ")
+    # (Commit 4) Document names have been put in.
+    print("Document 1 - Maori Greetings + Farewells")
+    print("Document 2 - Maori Objects")
+    print("Document 3 - Maori Places/Geography")
+    print("Document 4 - Maori Proverbs")
+    print("Document 5 - Maori Sentences - Commands")
+    print("Document 6 - Maori Sentences - Questions")
     print()
     print("Which level do you wish to play?")
-    print(" - To play view the document of your choice, please type: [Number]...")
+    print(" - To view the document of your choice, please type: [Number]...")
 
     """
     Phase 3 - v1.0
     Authorised by Liam Pettigrew
     18th June 2021
     """
+
+    # (Commit 4) Documents function now responds. In phase 3, information will be put in.
+    documentlevel = int(input())
+    if documentlevel == 1:
+      print("Information for Maori Greetings + Farewells will go here")
+    elif documentlevel == 2:
+      print("Information for Maori Objects will go here")
+    elif documentlevel == 3:
+      print("Information for Maori Places/Geography will go here")
+    elif documentlevel == 4:
+      print("Information for Maori Proverbs will go here")
+    elif documentlevel == 5:
+      print("Information for Maori Sentences - Commands will go here")
+    elif documentlevel == 6:
+      print("Information for Maori Sentences - Questions will go here")
+    elif documentlevel != range(1,10):
+      print("Sorry, that is not a valid level.")
+      print("Make sure you are typing only the number of the level.")
 
   elif cont2 == "Quiz" or cont2 == "quiz":
     print("All quiz levels:")
@@ -45,7 +64,7 @@ def main():
     print()
     main()
 
-# Version 2 of instructions function - lets you continue after reading the instructions
+# (Commit 3) Version 2 of instructions function - lets you continue after reading the instructions
 def ins():
   print("Have you read all of the instructions?")
   print(" - If so, please continue the program by typing: Yes")
