@@ -69,8 +69,8 @@ try:
   
         # (Commit 4) Documents function now responds. The information has been put in as of commit 5.
         # Note: Information on documents may be improved in a later version to better suit the quiz information.
-        documentlevel = input
-        if int(documentlevel()) == 1:
+        documentlevel = int(input())
+        if documentlevel == 1:
           print("===============================================================================================")
           print()
           print("Information for Maori Greetings + Farewells:")
@@ -95,7 +95,7 @@ try:
           print("Ka kite anō - See you later")
           print("Haere rā - Goodbye")
           docend()
-        elif int(documentlevel()) == 2:
+        elif documentlevel == 2:
           print("===============================================================================================")
           print("Information for Maori Objects:")
           print()
@@ -125,7 +125,7 @@ try:
           print("tēpu - table")
           print("tūru - Chair")
           docend()
-        elif int(documentlevel()) == 3:
+        elif documentlevel == 3:
           print("===============================================================================================")
           print("Information for Maori Places/Geography:")
           print()
@@ -142,7 +142,7 @@ try:
           print("Roto - Lake")
           print("Whanga - Bay / Stretch of water")
           docend()
-        elif int(documentlevel()) == 4:
+        elif documentlevel == 4:
           print("===============================================================================================")
           print("Information for Maori Proverbs:")
           print()
@@ -164,7 +164,7 @@ try:
           print("Forgetfulness is an enduring possession                   He taonga tonu te wareware")
           print("He who does not seek will not find                        Ko ia kāhore nei i rapu, tē kitea")
           docend()
-        elif int(documentlevel()) == 5:
+        elif documentlevel == 5:
           print("===============================================================================================")
           print("Information for Maori Sentences - Commands:")
           print()
@@ -191,7 +191,7 @@ try:
           print("Ka haere tāua ki te toa - Let's go to the shop")
           print("Ka waiata tātou - Let's sing")
           docend()
-        elif int(documentlevel()) == 6:
+        elif documentlevel == 6:
           print("===============================================================================================")
           print("Information for Maori Sentences - Questions:")
           print()
@@ -264,7 +264,7 @@ try:
         print()
         time.sleep(1)
         print(" - To play the level of your choice, please type: [Number]...")
-        quizlevel = input
+        quizlevel = int(input())
   
         # (COMMIT 7) All questions for the quiz function are listed here, including their answers.
         # The questions and answers have been found from reliable sources (the same sources the
@@ -290,7 +290,7 @@ try:
         quiz once the quiz has been completed.
         """
         # (COMMIT 9) The answer-checking functions have been added for all 7 questions of all 6 levels.
-        if int(quizlevel()) == 1:
+        if quizlevel == 1:
           Quiz1Correct = 0
           Quiz1Incorrect = 0
           print("Maori Greetings + Farewells quiz has begun.")
@@ -558,7 +558,7 @@ try:
           print("You have concluded Quiz 1.")
           main()
   
-        elif int(quizlevel()) == 2:
+        elif quizlevel == 2:
           Quiz2Correct = 0
           Quiz2Incorrect = 0
           print("Maori Objects quiz has begun.")
@@ -818,7 +818,7 @@ try:
           print("You have concluded Quiz 2.")
           main()
   
-        elif int(quizlevel()) == 3:
+        elif quizlevel == 3:
           Quiz3Correct = 0
           Quiz3Incorrect = 0
           print("Maori Places/Geography quiz has begun.")
@@ -1078,7 +1078,7 @@ try:
           print("You have concluded Quiz 3.")
           main()
           
-        elif int(quizlevel()) == 4:
+        elif quizlevel == 4:
           Quiz4Correct = 0
           Quiz4Incorrect = 0
           print("Maori Proverbs quiz has begun.")
@@ -1338,7 +1338,7 @@ try:
           print("You have concluded Quiz 4.")
           main()
   
-        elif int(quizlevel()) == 5:
+        elif quizlevel == 5:
           Quiz5Correct = 0
           Quiz5Incorrect = 0
           print("Maori Sentences - Commands quiz has begun.")
@@ -1598,7 +1598,7 @@ try:
             print("You have concluded Quiz 5.")
             main()
           
-        elif int(quizlevel()) == 6:
+        elif quizlevel == 6:
           Quiz6Correct = 0
           Quiz6Incorrect = 0
           print("Maori Sentences - Questions quiz has begun.")
@@ -1914,5 +1914,7 @@ try:
 
 # (Commit 10) A ValueError checker has been added to make the program more stable when a ValueError occurs.
 except ValueError:
+  print()
   print("That is an invalid answer. Please try again.")
+  print()
   main()
