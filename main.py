@@ -68,7 +68,6 @@ try:
         """
   
         # (Commit 4) Documents function now responds. The information has been put in as of commit 5.
-        # Note: Information on documents may be improved in a later version to better suit the quiz information.
         documentlevel = int(input())
         if documentlevel == 1:
           print("===============================================================================================")
@@ -1815,6 +1814,7 @@ try:
               q6q7answer = 2
               q6q7play = True
             else:
+              print()
               print("That is an invalid answer. Make sure you are typing the letter of chosen answer.")
               print("Please try again.")
               q6q7play = False
@@ -1874,7 +1874,6 @@ try:
     print("Have you read all of the instructions?")
     time.sleep(1)
     print(" - If so, please continue the program by typing: Yes")
-    print(" - If not, please break the program by typing: No")
     instructionscontinue = str(input()).lower()
     if instructionscontinue == "yes" or instructionscontinue == "Yes":
       print("The program will now continue.")
@@ -1883,8 +1882,10 @@ try:
       intro = True
     elif instructionscontinue == "No" or instructionscontinue == "no":
       sys.exit(print("The program will now self-destruct"))
-    else:
+    # (Commit 12) The unidentified answer variable has been fixed.
+    elif instructionscontinue != "yes" or instructionscontinue != "Yes" or instructionscontinue != "no" or instructionscontinue != "No":
       print("Sorry, " + instructionscontinue + " is not a valid answer.")
+      ins()
     
   """
   Starting Welcome (Phase 1) - v1.0
@@ -1901,7 +1902,32 @@ try:
     print(" - To continue the program, please type: Continue... ")
     cont = str(input()).lower()
     if cont == "Instructions" or cont == "instructions":
-      print("...Instructions go here...")
+      # (Commit 12) Instructions have been added.
+      print("PROGRAM INSTRUCTIONS")
+      print()
+      print(" === Fraser High School Te Reo Maori/Maaori in Python: Education Wizard ===")
+      print("Created and Published by Liam Pettigrew.")
+      print("Program is intended for general audiences.")
+      print()
+      print("This is the ultimate offline experience to learning Te Reo Maori.")
+      print("This Python program contains six documents full of information on")
+      print("the Te Reo Maori language, that will have you fully educated")
+      print("on the basics of the language. This program also features six")
+      print("7-question multiple-choice quizzes on the language, containing")
+      print("questions on the same categories of the documents.")
+      print()
+      print("This program is easy to use, and will get you learning in no")
+      print("time. It is reccommended that you read the information documents")
+      print("before entering the quizzes, as the information from the documents")
+      print("contains everything you need to complete the quiz with a perfect")
+      print("score. The six quiz levels all relate back to the same information")
+      print("from the six documents.")
+      print()
+      print("Having trouble with using the program? Make sure that whenever")
+      print("you input an answer, you use correct spelling, and don't use")
+      print("abbreviated alternatives. All answers are non-case-sensitive.")
+      print()
+      print("Enjoy the program, and use it to your advantage!")
       print()
       ins()
       intro = True
