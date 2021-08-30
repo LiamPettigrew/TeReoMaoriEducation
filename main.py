@@ -1,6 +1,5 @@
 import sys
 import time
-import threading
 
 # (Commit 10) The entire code has been put under a "try" command so that a ValueError checker can be
 # added to make the program more stable when a ValueError occurs.
@@ -18,21 +17,6 @@ try:
     Different functions/definitions have also been added for the quiz and the
     documents in order to loop them.
     """
-
-    # (Commit 13) New stopwatch function implemented.
-  
-    def countdown():
-      global my_timer
-      for x in range(my_timer):
-        my_timer = my_timer - 1
-        time.sleep(1)
-      print()
-      print()
-      print("You ran out of time. Increse your time-limit if you wish to play for longer.")
-      print("Sending you back to the start...")
-      print()
-      main()
-
     def docend():
       print("===============================================================================================")
       print()
@@ -69,7 +53,7 @@ try:
         print()
         print("Which document do you wish to view?")
         time.sleep(1)
-        print(" - To view the document of your choice, please type: [Integer of level]...")
+        print(" - To view the document of your choice, please type: [Number]...")
   
         """
         Phase 3 - v1.0
@@ -266,8 +250,7 @@ try:
       is also asked which level they wish to view, and it then runs the level.
       """
       # (Commit 6) a proper function has been added for the quiz.
-      # (Commit 7) the answers for the questions have been commented, but they do not respond.
-      # (Commit 8) the multiple choices for all levels have been added, however it still does not function.
+      # (Commit 8) the multiple choices for all levels have been added.
       def quiz():
         print("All quiz levels:")
         print("Level 1 - Maori Greetings + Farewells")
@@ -278,7 +261,7 @@ try:
         print("Level 6 - Maori Sentences - Questions")
         print()
         time.sleep(1)
-        print(" - To play the level of your choice, please type: [Integer of level]...")
+        print(" - To play the level of your choice, please type: [Number]...")
         quizlevel = int(input())
   
         # (COMMIT 7) All questions for the quiz function are listed here, including their answers.
@@ -306,21 +289,6 @@ try:
         """
         # (COMMIT 9) The answer-checking functions have been added for all 7 questions of all 6 levels.
         if quizlevel == 1:
-
-          # (Commit 13) This is where the user gets to input their choice
-          # of time limit.
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          global my_timer
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz1Correct = 0
           Quiz1Incorrect = 0
           print("Maori Greetings + Farewells quiz has begun.")
@@ -554,7 +522,7 @@ try:
 
           # (Commit 10) The program will now show which answers were correct and which
           # were incorrect (with correct answers) once the quiz has concluded.
-
+  
           if q1q1answer == 1:
             print("Question 1: Correct")
           if q1q1answer == 2:
@@ -589,17 +557,6 @@ try:
           main()
   
         elif quizlevel == 2:
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz2Correct = 0
           Quiz2Incorrect = 0
           print("Maori Objects quiz has begun.")
@@ -860,17 +817,6 @@ try:
           main()
   
         elif quizlevel == 3:
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz3Correct = 0
           Quiz3Incorrect = 0
           print("Maori Places/Geography quiz has begun.")
@@ -1131,17 +1077,6 @@ try:
           main()
           
         elif quizlevel == 4:
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz4Correct = 0
           Quiz4Incorrect = 0
           print("Maori Proverbs quiz has begun.")
@@ -1402,17 +1337,6 @@ try:
           main()
   
         elif quizlevel == 5:
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz5Correct = 0
           Quiz5Incorrect = 0
           print("Maori Sentences - Commands quiz has begun.")
@@ -1673,17 +1597,6 @@ try:
             main()
           
         elif quizlevel == 6:
-
-          print("How long do you wish to set the time-limit to?")
-          print(" - To set the stopwatch to your desired time, type: [Integer in seconds]")
-          print(" - To freeplay (no stopwatch), type: 0")
-          my_timer = int(input("Enter: "))
-          if my_timer == 0:
-            print("Freeplay mode chosen.")
-          else:
-            countdown_thread = threading.Thread(target = countdown)
-            countdown_thread.start()
-          
           Quiz6Correct = 0
           Quiz6Incorrect = 0
           print("Maori Sentences - Questions quiz has begun.")
